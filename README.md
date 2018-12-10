@@ -139,7 +139,7 @@ webpack --mode development --watch --progress --display-modules --colors --displ
 
 
 # 本文转自
-[简书]（https://www.jianshu.com/p/9cf3190307d9）
+[简书] https://www.jianshu.com/p/9cf3190307d9
 
 
 
