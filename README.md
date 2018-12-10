@@ -1,12 +1,16 @@
 # webpack-test
 webapck 如何安装
 网上关于webpack的教程不少，但是大多已经过时，由于webapck版本更新后许多操作变化很大，很多教程已经的教程已经老版本的。当我们使用npm安装webpack时，若不指定webpack的版本（很多小白都没有指定版本），将默认安装最新版。笔者测试时默认安装的是4.1.1.并不能照搬老教程的方法，。使用的是windows操作系统，如果你的是webpack4.x版本，可参考进行配置。
+
+
 # 一、全局安装webpack
 如果我们安装旧版本的安装方式，直接使用npm全局安装webpack，我们预期全局安装webpack后，便能在命令行中使用webpack指令。我们在命令行输入：
 ```
 npm install -g webpack
 ```
 当执行该操作后，便在`c:Users\你的用户名\AppData\Roaming\npm\node_modules`创建了webpack文件夹，里面储存了刚刚全局安装的webpack模块。
+
+
 # 二、创建项目
 我们在适合的位置新建一个文件夹webpack-test,用于存放我们的项目。
 命令行中定位到webpack-test文件夹下(按住shift+右键:选 在此处打开命令窗口)，输入以下命令进行项目初始化：
@@ -14,6 +18,8 @@ npm install -g webpack
 npm init
 ```
 这里要求设置很多选项，可以按项目情况配置也可以不填直接回车。完成后，我们发现文件夹中增加了`package.json`文件，它用于保存关于项目的信息。
+
+
 # 三、尝试打包出现提示
 我们在项目新建一个文件`hello.js`。并在其中输入代码：
 ```
@@ -32,6 +38,8 @@ Would you like to install webpack-cli? (That will run npm install -D webpack-cli
 >CLI（命令行工具）已经转移到了一个单独的包webpack-cli中。
 -> 你想安装webpack-cli吗？：去执行npm install -D webpack-cli
 意思是，我们需要额外安装webpack-cli，否则便不能在命令行中使用webpack的相关命令。
+
+
 # 四、安装webpack-cli
 我们在项目中本地安装webpack-cli
 ```
@@ -55,6 +63,8 @@ Would you like to install webpack-cli? (That will run npm install -D webpack-cli
 npm uninstall webpack-cli
 npm install -g webpack-cli
 ```
+
+
 # 五、设置模式
 我们再次尝试打包：
 ```
@@ -84,6 +94,8 @@ ERROR in Entry module not found:ERROR:Can't resolve './src' in 'C:/Users/你的�
 ```
 翻译成中文：
 >未找到入口模块发生错误：错误：无法解析’C:/Users/你的用户名/Desktop/webpack-test’中的’./src’
+
+
 # 六、创建入口文件
 这表明webpack4.x是以项目根目录下的'./src'作为入口，但我们的项目中缺乏该路径，因此我们在根目录下创建src文件夹，事实上webpack4.x以'./src/index.js'作为入口，单单创建src文件而没有index.js文件仍然会报错，因此我们
 >将hello.js移动到'./src'，并重命名为index.js。
@@ -113,12 +125,16 @@ webpack --mode production
 npm run dev
 ```
 可以看到根目录下生成了dist目录，并且dist目录下生成了main.js文件，main.js文件已经打包了src目录下index.js文件的代码。
+
+
 # 七、配置其他参数
 我们如果需要配置webpack指令的其他参数，只需要在`webpack –mode production/development`后加上其他参数即可，如：
 ```
 webpack --mode development --watch --progress --display-modules --colors --display-reasons
 ```
 当然，这也可以写`入package.json的scripts`之中。
+
+
 # 八、总结
 我们可以将以上探索进行整理总结，首先是注意事项：
 > 1、webpack-cli必须要全局安装，否则不能使用webpack指令；
@@ -132,6 +148,8 @@ webpack --mode development --watch --progress --display-modules --colors --displ
 > 4、全局安装webpack。
 > 5、webpack –mode development/production进行打包，可在package.json中配置dev和build的脚本，便只需运行npm run dev/build，作用相同。
 >6、在webpack –mode development/production可串联设置其他参数。
+
+
 
 # 最后webapck官方提示
 >>>不推荐全局安装 webpack。这会将你项目中的 webpack 锁定到指定版本，并且在使用不同的 webpack 版本的项目中，可能会导致构建失败。
