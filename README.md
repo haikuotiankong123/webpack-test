@@ -155,7 +155,6 @@ webpack --mode development --watch --progress --display-modules --colors --displ
 >>>不推荐全局安装 webpack。这会将你项目中的 webpack 锁定到指定版本，并且在使用不同的 webpack 版本的项目中，可能会导致构建失败。
 > 可以直接使用本地的`webapck` 进行操作 例如： `node_modules/.bin/webpack-cli ./src/index.js ./dist/main.js` 
 
-！[image](https://github.com/haikuotiankong123/webpack-test/blob/master/lujing.png)
 ![image](https://raw.githubusercontent.com/haikuotiankong123/webpack-test/master/lujing.png)
 
 # 本文转自
