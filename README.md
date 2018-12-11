@@ -155,6 +155,10 @@ webpack --mode development --watch --progress --display-modules --colors --displ
 >>>不推荐全局安装 webpack。这会将你项目中的 webpack 锁定到指定版本，并且在使用不同的 webpack 版本的项目中，可能会导致构建失败。
 > 可以直接使用本地的`webapck` 进行操作 例如： `node_modules/.bin/webpack-cli ./src/index.js ./dist/main.js` 
 
+
+# 注意一下路径的问题
+> 用本地cdm命令行时路径是斜杆“/”,用git工具时路径是反斜杆“\”.我们可以看自身的路径的写法就可以了
+
 ![image](https://raw.githubusercontent.com/haikuotiankong123/webpack-test/master/lujing.png)
 
 # 本文转自
